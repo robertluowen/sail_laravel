@@ -18,7 +18,10 @@ use Illuminate\Support\Facades\Route;
 //});
 
 
-Route::get('/','StaticPagesController@home');
-Route::get('/help','StaticPagesController@help');
-Route::get('/about','StaticPagesController@about');
+Route::get('/','StaticPagesController@home')->name('home');
+//命名路由，可以在blade模板中用到
+Route::get('/help','StaticPagesController@help')->name('help');
+Route::get('/about','StaticPagesController@about')->name('about');
+
+Route::get('signup','UserController@create')->name('signup');
 
