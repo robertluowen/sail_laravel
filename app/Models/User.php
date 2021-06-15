@@ -9,10 +9,17 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    // Notifiable 消息通知相关功能引用
+    // HasFactory 模型工厂相关功能引用
+    // Authenticatable Authenticatable
+
     use HasFactory, Notifiable;
+
+    protected $table = 'users';
 
     /**
      * The attributes that are mass assignable.
+     * 过滤提交的字段，只有包含在该属性中的字段才可以更新
      *
      * @var array
      */
@@ -24,6 +31,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that should be hidden for arrays.
+     * 隐藏输出的属性
      *
      * @var array
      */
