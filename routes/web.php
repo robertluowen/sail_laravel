@@ -27,3 +27,5 @@ Route::get('signup','UsersController@create')->name('signup');
 //自动生成restful 的路由资源
 Route::resource('users','UsersController');
 
+//----表单验证
+Route::any('cookie','CookieController@index');
