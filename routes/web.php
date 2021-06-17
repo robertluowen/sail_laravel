@@ -27,5 +27,10 @@ Route::get('signup','UsersController@create')->name('signup');
 //自动生成restful 的路由资源
 Route::resource('users','UsersController');
 
-//----表单验证
-Route::any('cookie','CookieController@index');
+//会话管理
+Route::get('login','SessionsController@create')->name('login');
+Route::post('login','SessionsController@store')->name('login');
+Route::delete('logout','SessionsController@destroy')->name('logout');
+
+////----表单验证
+//Route::any('cookie','CookieController@index');
